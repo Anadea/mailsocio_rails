@@ -7,7 +7,7 @@ ActionMailer plugin to use mailsocio to deliver emails
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'mailsocio_rails', github: 'Anadea/mailsocio_rails'
+gem 'mailsocio_rails', github: 'Anadea/mailsocio_rails', tag: '0.0.1'
 ```
 
 And then execute `bundle`.
