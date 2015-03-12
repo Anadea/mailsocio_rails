@@ -1,4 +1,4 @@
-Copyright (c) 2015 Dmitriy Kiriyenko
+Copyright (c) 2015 Anahoret Team
 
 MIT License
 
