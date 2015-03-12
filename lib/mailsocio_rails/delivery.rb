@@ -20,9 +20,9 @@ module MailsocioRails
 
     def default_settings
       {
-        address:             'app.sendbrain.com',
+        address:             'app.mailarbor.com',
         port:                25,
-        mailsocio_recipient: 'submit@app.sendbrain.com',
+        mailsocio_recipient: 'submit@app.mailarbor.com',
         domain:              'localhost.localdomain'
       }
     end
