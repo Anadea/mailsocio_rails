@@ -1,13 +1,13 @@
-# Mailsocio::Action::Mailer
+# Mailsocio Rails
 
-TODO: Write a gem description
+ActionMailer plugin to use mailsocio to deliver emails
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'mailsocio-action-mailer'
+gem 'mailsocio_rails', github: 'Anadea/mailsocio_rails'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install mailsocio-action-mailer
+    $ gem install mailsocio_rails
 
 ## Usage
 
@@ -24,7 +24,7 @@ TODO: Write usage instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/mailsocio-action-mailer/fork )
+1. Fork it ( https://github.com/[my-github-username]/mailsocio_rails/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
