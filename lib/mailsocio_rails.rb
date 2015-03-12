@@ -1,4 +1,4 @@
-require 'actionmailer'
+require 'action_mailer'
 require 'mailsocio_rails/delivery'
 require 'mailsocio_rails/version'
 
