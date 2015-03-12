@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["dmitriy.kiriyenko@anahoret.com"]
   spec.summary       = %q{ActionMailer plugin to use mailsocio to deliver emails}
   spec.description   = File.read(File.expand_path(File.join(File.dirname(__FILE__), 'README.md')))
-  spec.homepage      = "app.mailarbor.com"
+  spec.homepage      = "http://app.mailarbor.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
