@@ -10,17 +10,41 @@ Add this line to your application's Gemfile:
 gem 'mailsocio_rails', github: 'Anadea/mailsocio_rails'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install mailsocio_rails
+And then execute `bundle`.
 
 ## Usage
 
-Instructions pending...
+Configure ActionMailer as follows:
+
+```ruby
+# config/application.rb
+
+config.delivery_method = :mailsocio
+config.mailsocio_settings = {
+  account_id: '<your account id>',
+  api_key: '<your account api key>'
+}
+```
+
+You're done!
+
+## Customization
+
+You can also override gem defaults:
+
+```ruby
+config.mailsocio_settings = {
+  account_id: '<your account id>',
+  api_key: '<your account api key>',
+
+  address:             'app.mailarbor.com',        # This can be any smtp server
+  port:                25,                         # that is capable to
+  domain:              'localhost.localdomain'     # deliver emails.
+
+  mailsocio_recipient: 'submit@app.mailarbor.com', # If you change this,
+                                                   # bad things can happen.
+}
+```
 
 ## Contributing
 
