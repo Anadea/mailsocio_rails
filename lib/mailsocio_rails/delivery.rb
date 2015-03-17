@@ -1,3 +1,5 @@
+require 'mail'
+
 module MailsocioRails
   class Delivery < ::Mail::SMTP
     attr_accessor :settings
