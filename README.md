@@ -19,8 +19,8 @@ Configure ActionMailer as follows:
 ```ruby
 # config/application.rb
 
-config.delivery_method = :mailsocio
-config.mailsocio_settings = {
+config.action_mailer.delivery_method = :mailsocio
+config.action_mailer.mailsocio_settings = {
   account_id: '<your account id>',
   api_key: '<your account api key>'
 }
@@ -33,7 +33,7 @@ You're done!
 You can also override gem defaults:
 
 ```ruby
-config.mailsocio_settings = {
+config.action_mailer.mailsocio_settings = {
   account_id: '<your account id>',
   api_key: '<your account api key>',
 
