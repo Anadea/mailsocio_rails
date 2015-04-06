@@ -8,12 +8,15 @@ module MailsocioRails
     end
 
     def deliver!(mail)
-      addrs = addresses mail
+      addrs = addresses_from mail, :to, :cc
+      bcc = mail[:bcc].to_s
+
       mail.to = settings[:mailsocio_recipient]
       mail.cc = nil
       mail.bcc = nil
 
       mail['X-To'] = Hash[addrs.map {|(addr, name)| [addr, {'name' => name}]}].to_json
+      mail['X-Bcc'] = bcc
       mail['X-Account-Id'] = settings[:account_id]
       mail['X-Api-Key'] = settings[:api_key]
 
@@ -31,12 +34,10 @@ module MailsocioRails
       }
     end
 
-    def addresses(mail)
-      addresses_from(mail, :to) + addresses_from(mail, :cc) + addresses_from(mail, :bcc)
-    end
-
-    def addresses_from(mail, method)
-      (mail.send(method) || []).zip(mail[method].try(:display_names) || [])
+    def addresses_from(mail, *methods)
+      methods.flat_map { |method|
+        (mail.send(method) || []).zip(mail[method].try(:display_names) || [])
+      }
     end
   end
 end
