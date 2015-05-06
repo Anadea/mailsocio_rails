@@ -36,8 +36,14 @@ module MailsocioRails
 
     def addresses_from(mail, *methods)
       methods.flat_map { |method|
-        (mail.send(method) || []).zip(mail[method].try(:display_names) || [])
+        (mail.send(method) || []).zip(really_try(mail[method], :display_names) || [])
       }
+    end
+
+    def really_try(obj, meth, *args, &block)
+      obj.send(meth, *args, &block)
+    rescue NameError
+      nil
     end
   end
 end
